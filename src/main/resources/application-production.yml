@@ -1,0 +1,22 @@
+spring:
+  config:
+    activate:
+      on-profile: production
+  application:
+    name: production-laboratory
+
+  jpa:
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        default_batch_fetch_size: 1000
+    hibernate:
+      ddl-auto: validate
+      jdbc:
+        time_zone: UTC
+    generate-ddl: false
