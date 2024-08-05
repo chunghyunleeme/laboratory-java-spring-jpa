@@ -2,6 +2,14 @@ spring:
   profiles:
     active: localhost
 
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /laboratory/swagger.html
+
 server:
   port: ${LABORATORY_PORT}
   shutdown: graceful
+
