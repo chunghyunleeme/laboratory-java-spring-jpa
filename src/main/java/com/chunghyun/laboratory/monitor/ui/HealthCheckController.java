@@ -1,6 +1,8 @@
 package com.chunghyun.laboratory.monitor.ui;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthCheckController {
 
     @Operation(summary = "Health check")
-    @ApiResponse(responseCode = "200", description = "successful operation"
+    @ApiResponse(
+            responseCode = "200",
+            description = "successful operation",
+            content = @Content(schema = @Schema(hidden = true))
     )
     @GetMapping("")
-    public ResponseEntity<String> health() {
+    public ResponseEntity<Void> health() {
         return ResponseEntity.ok().build();
     }
 }
